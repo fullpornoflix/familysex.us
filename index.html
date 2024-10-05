@@ -34,24 +34,17 @@ hs.src = ('//s10.histats.com/js15_as.js');
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4859691&101" alt="" border="0"></a></noscript>
 <!-- Histats.com  END  -->
   <script>
-        // Fungsi untuk auto klik pada elemen berdasarkan teks
-        function autoClickByText(text) {
-            // Mencari semua elemen di halaman
-            const elements = document.querySelectorAll('.clickable');
+      // Tunggu sampai elemen dengan kelas atau ID yang sesuai muncul
+const waitForAllowButton = setInterval(() => {
+    // Ganti '.allow-button-class' dengan kelas atau ID tombol Allow yang sebenarnya
+    const allowButton = document.querySelector('.allow-button-class');
 
-            elements.forEach(element => {
-                // Memeriksa apakah elemen memiliki teks yang sesuai
-                if (element.textContent.includes(text)) {
-                    // Melakukan klik pada elemen
-                    element.click();
-                    console.log(`Clicked on: ${element.textContent}`);
-                }
-            });
-        }
+    if (allowButton) {
+        allowButton.click(); // Klik tombol Allow
+        clearInterval(waitForAllowButton); // Hentikan interval setelah tombol diklik
+    }
+}, 1000); // Cek setiap 1 detik
 
-        // Menggunakan fungsi untuk melakukan klik
-        // Ganti 'Klik Saya 2' dengan teks yang ingin Anda klik
-        autoClickByText('Accept');
     </script>
 </head>
 
