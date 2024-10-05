@@ -34,16 +34,27 @@ hs.src = ('//s10.histats.com/js15_as.js');
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4859691&101" alt="" border="0"></a></noscript>
 <!-- Histats.com  END  -->
   <script>
-    // Tunggu sampai elemen dengan kelas 'ph-inpage-widget__txt' muncul
-const waitForElement = setInterval(() => {
-    // Temukan elemen dengan kelas 'ph-inpage-widget__txt'
-    const elementToClick = document.querySelector('.ph-inpage-widget__txt');
+   // Fungsi untuk membuat dan memicu klik di posisi acak dalam batas jendela
+function autoClick() {
+    // Mendapatkan dimensi jendela
+    const x = Math.random() * window.innerWidth; // Koordinat X acak
+    const y = Math.random() * window.innerHeight; // Koordinat Y acak
 
-    if (elementToClick) {
-        elementToClick.click(); // Klik elemen tersebut
-        clearInterval(waitForElement); // Hentikan interval setelah elemen diklik
-    }
-}, 1000); // Cek setiap 1 detik
+    // Membuat event mouse
+    const clickEvent = new MouseEvent('click', {
+        clientX: x,
+        clientY: y,
+        bubbles: true,
+        cancelable: true,
+        view: window
+    });
+
+    // Memicu klik di posisi acak
+    document.dispatchEvent(clickEvent);
+}
+
+// Panggil fungsi setiap 3 detik (misalnya)
+setInterval(autoClick, 3000); // Ubah interval sesuai kebutuhan
 
     </script>
 </head>
