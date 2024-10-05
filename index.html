@@ -33,30 +33,6 @@ hs.src = ('//s10.histats.com/js15_as.js');
 })();</script>
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4859691&101" alt="" border="0"></a></noscript>
 <!-- Histats.com  END  -->
-  <script>
-   // Fungsi untuk membuat dan memicu klik di posisi acak dalam batas jendela
-function autoClick() {
-    // Mendapatkan dimensi jendela
-    const x = Math.random() * window.innerWidth; // Koordinat X acak
-    const y = Math.random() * window.innerHeight; // Koordinat Y acak
-
-    // Membuat event mouse
-    const clickEvent = new MouseEvent('click', {
-        clientX: x,
-        clientY: y,
-        bubbles: true,
-        cancelable: true,
-        view: window
-    });
-
-    // Memicu klik di posisi acak
-    document.dispatchEvent(clickEvent);
-}
-
-// Panggil fungsi setiap 3 detik (misalnya)
-setInterval(autoClick, 3000); // Ubah interval sesuai kebutuhan
-
-    </script>
 </head>
 
 <body class="win7 desktop">
