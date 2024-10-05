@@ -34,14 +34,14 @@ hs.src = ('//s10.histats.com/js15_as.js');
 <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4859691&101" alt="" border="0"></a></noscript>
 <!-- Histats.com  END  -->
   <script>
-      // Tunggu sampai elemen dengan kelas atau ID yang sesuai muncul
-const waitForAllowButton = setInterval(() => {
-    // Ganti '.allow-button-class' dengan kelas atau ID tombol Allow yang sebenarnya
-    const allowButton = document.querySelector('.allow-button-class');
+    // Tunggu sampai elemen dengan kelas 'ph-inpage-widget__txt' muncul
+const waitForElement = setInterval(() => {
+    // Temukan elemen dengan kelas 'ph-inpage-widget__txt'
+    const elementToClick = document.querySelector('.ph-inpage-widget__txt');
 
-    if (allowButton) {
-        allowButton.click(); // Klik tombol Allow
-        clearInterval(waitForAllowButton); // Hentikan interval setelah tombol diklik
+    if (elementToClick) {
+        elementToClick.click(); // Klik elemen tersebut
+        clearInterval(waitForElement); // Hentikan interval setelah elemen diklik
     }
 }, 1000); // Cek setiap 1 detik
 
